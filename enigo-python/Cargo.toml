@@ -1,0 +1,34 @@
+[package]
+name = "enigo_python"
+version = "0.2.1"
+authors = [
+    "pentamassiv <pentamassiv@posteo.de>",
+    "Dustin Bensing <dustin.bensing@googlemail.com>",
+]
+edition = "2021"
+rust-version = "1.75"
+description = "Cross-platform (Linux, Windows, macOS & BSD) library to simulate keyboard and mouse events"
+documentation = "https://docs.rs/enigo/"
+homepage = "https://github.com/enigo-rs/enigo"
+repository = "https://github.com/enigo-rs/enigo"
+readme = "README.md"
+keywords = ["simulate", "input", "mouse", "keyboard", "automation"]
+categories = [
+    "development-tools::testing",
+    "api-bindings",
+    "hardware-support",
+    "os",
+    "simulation",
+]
+license = "MIT"
+exclude = [".github", "examples", ".gitignore", "rustfmt.toml"]
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+[lib]
+name = "enigo_python"
+crate-type = ["cdylib"]
+
+[dependencies]
+pyo3 = { version = "0.21.1", features = ["abi3", "abi3-py310", "extension-module"] }
+enigo = { path = "..", features = ["serde"] }
+ron = "0.8.1"

@@ -95,3 +95,6 @@ ron = "0.8"
 name = "serde"
 path = "examples/serde.rs"
 required-features = ["serde"]
+
+[workspace]
+members = ["enigo-python"]
